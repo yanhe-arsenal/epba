@@ -5,31 +5,31 @@
         <div class="col-sm-offset-2 col-sm-8">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    New Task
+                    New ePBA Card
                 </div>
 
                 <div class="panel-body">
                     <!-- Display Validation Errors -->
                     @include('common.errors')
 
-                    <!-- New Task Form -->
+                    <!-- New ePBA Card Form -->
                     <form action="/task" method="POST" class="form-horizontal">
                         {{ csrf_field() }}
 
-                        <!-- Task Name -->
+                        <!-- ePBA reciept email address -->
                         <div class="form-group">
-                            <label for="task-name" class="col-sm-3 control-label">Task</label>
+                            <label for="email" class="col-sm-3 control-label">email</label>
 
                             <div class="col-sm-6">
-                                <input type="text" name="name" id="task-name" class="form-control" value="{{ old('task') }}">
+                                <input type="text" name="name" id="email" class="form-control" value="{{ old('task') }}">
                             </div>
                         </div>
 
-                        <!-- Add Task Button -->
+                        <!-- Add Send Card Button -->
                         <div class="form-group">
                             <div class="col-sm-offset-3 col-sm-6">
                                 <button type="submit" class="btn btn-default">
-                                    <i class="fa fa-btn fa-plus"></i>Add Task
+                                    <i class="fa fa-btn fa-plus"></i>Send ePBA Card
                                 </button>
                             </div>
                         </div>
@@ -37,17 +37,17 @@
                 </div>
             </div>
 
-            <!-- Current Tasks -->
+            <!-- Current Cards -->
             @if (count($tasks) > 0)
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Current Tasks
+                        Current ePBA Cards
                     </div>
 
                     <div class="panel-body">
                         <table class="table table-striped task-table">
                             <thead>
-                                <th>Task</th>
+                                <th>Reciept Email Address</th>
                                 <th>&nbsp;</th>
                             </thead>
                             <tbody>
