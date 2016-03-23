@@ -32,4 +32,12 @@ class User extends Authenticatable
     {
         return $this->hasMany(Task::class);
     }
+    
+    /**
+     * Get all of the epba card requests for the user.
+     */
+    public function epba_card_requests()
+    {
+        return $this->hasMany(Epba_card_request::class);
+    }
 }
