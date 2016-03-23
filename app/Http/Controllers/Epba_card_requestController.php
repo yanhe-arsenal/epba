@@ -60,7 +60,11 @@ class Epba_card_requestController extends Controller
         $request->user()->epba_card_requests()->create([
             'recipient_email' => $request->recipient_email,
         ]);
-
+	
+	Mail::send('emails.welcome', ['key' => 'value'], function($message)
+	{
+    		$message->to('yanhe790926@hotmail.com', 'John Smith')->subject('Welcome!');
+	});
         return redirect('/epba_card_requests');
     }
 
