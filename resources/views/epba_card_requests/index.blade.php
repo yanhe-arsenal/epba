@@ -13,7 +13,7 @@
                     @include('common.errors')
 
                     <!-- New ePBA Card Form -->
-                    <form action="/task" method="POST" class="form-horizontal">
+                    <form action="/epba_card_request" method="POST" class="form-horizontal">
                         {{ csrf_field() }}
 
                         <!-- ePBA reciept email address -->
@@ -38,14 +38,14 @@
             </div>
 
             <!-- Current Cards -->
-            @if (count($tasks) > 0)
+            @if (count($epba_card_requests) > 0)
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         Current ePBA Cards
                     </div>
 
                     <div class="panel-body">
-                        <table class="table table-striped task-table">
+                        <table class="table table-striped epba_card_request-table">
                             <thead>
                                 <th>Recipient Email Address</th>
                                 <th>&nbsp;</th>
