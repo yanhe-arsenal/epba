@@ -14,10 +14,11 @@ class CreateEpbaCardRequestTable extends Migration
     {
         Schema::create('epba_card_requests', function (Blueprint $table) {
             $table->increments('id');
-	    $table->integer('user_id')->index();		
+	    $table->integer('user_id');	
             $table->timestamps();
 	    $table->string('recipient_email');	
 	    $table->integer('card_generated_flag')->default(0);	
+	    $table->index(['user_id', 'recipient_email']);
         });
     }
 

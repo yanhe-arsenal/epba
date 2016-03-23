@@ -54,7 +54,7 @@ class Epba_card_requestController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'recipient_email' => 'required|email',
+            'recipient_email' => 'required|unique:epba_card_requests|email',
         ]);
 
         $request->user()->epba_card_requests()->create([
