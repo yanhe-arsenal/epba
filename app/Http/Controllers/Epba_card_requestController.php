@@ -79,14 +79,14 @@ class Epba_card_requestController extends Controller
      * @param  Epba_card_request  $epba_card_request
      * @return Response
      */
-/**
-*    public function destroy(Request $request, Epba_card_request $epba_card_request)
-*    {
-*	
+
+    public function destroy(Request $request, Epba_card_request $epba_card_request)
+    {
+/*	
 *       	$this->authorize('destroy', $epba_card_request);
 *        
 *	$epba_card_request->delete();
 *        return redirect('/epba_card_requests');
-*    }
 */
+	}
 }
