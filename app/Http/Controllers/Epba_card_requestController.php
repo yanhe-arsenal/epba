@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Log;
 use Mail;
 use Illuminate\Http\Request;
 
@@ -82,7 +83,7 @@ class Epba_card_requestController extends Controller
 
     public function destroy(Request $request, Epba_card_request $epba_card_request)
     {
-	
+	Log::info('Showing user profile for user: '.$epba_card_request);
        	$this->authorize('destroy', $epba_card_request);
         
 	$epba_card_request->delete();
