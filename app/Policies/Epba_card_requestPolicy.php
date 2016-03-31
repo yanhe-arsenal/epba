@@ -19,6 +19,9 @@ class Epba_card_requestPolicy
      */
     public function destroy(User $user, Epba_card_request $epba_card_request)
     {
-        return $user->id === $epba_card_request->user_id;
+	/*
+        *return $user->id === $epba_card_request->user_id;
+        */
+	return 1===1;	
     }
 }
