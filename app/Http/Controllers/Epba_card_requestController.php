@@ -82,9 +82,9 @@ class Epba_card_requestController extends Controller
 	/**
         *$this->authorize('destroy', $epba_card_request);
 	*
-        *$epba_card_request->delete();
 	*/
-
+        
+	$epba_card_request->delete();
         return redirect('/epba_card_requests');
     }
 }
