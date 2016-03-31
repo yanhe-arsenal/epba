@@ -61,7 +61,7 @@
                                                 {{ csrf_field() }}
                                                 {{ method_field('DELETE') }}
 
-                                                <button type="submit" id="delete-epba_card_request-{{ $epba_card_request->recipient_email }}" class="btn btn-danger">
+                                                <button type="submit" id="delete-epba_card_request-{{ $epba_card_request->id }}" class="btn btn-danger">
                                                     <i class="fa fa-btn fa-trash"></i>Delete
                                                 </button>
                                             </form>
