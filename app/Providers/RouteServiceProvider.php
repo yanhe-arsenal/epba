@@ -25,7 +25,6 @@ class RouteServiceProvider extends ServiceProvider
     public function boot(Router $router)
     {
         //
-	$router->model('epba_card_request', 'App\Epba_card_request');
         parent::boot($router);
     }
 

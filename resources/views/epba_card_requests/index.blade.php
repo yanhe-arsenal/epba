@@ -57,7 +57,7 @@
 
                                         <!-- Delete Button -->
                                         <td>
-                                            <form action="/epba_card_request/{{ $epba_card_request->recipient_email }}" method="POST">
+                                            <form action="/epba_card_request/{{ $epba_card_request->id }}" method="POST">
                                                 {{ csrf_field() }}
                                                 {{ method_field('DELETE') }}
 
