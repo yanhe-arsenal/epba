@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Mail;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -54,7 +55,7 @@ class Epba_card_requestController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'recipient_email' => 'required|unique:epba_card_requests|email|max:20',
+            'recipient_email' => 'required|unique:epba_card_requests|email',
         ]);
 
         $request->user()->epba_card_requests()->create([
@@ -65,7 +66,8 @@ class Epba_card_requestController extends Controller
 	{
     		$message->to('yanhe790926@hotmail.com', 'John Smith')->subject('Welcome!');
 	});
-        return redirect('/epba_card_requests');
+        
+	return redirect('/epba_card_requests');
     }
 
     /**
