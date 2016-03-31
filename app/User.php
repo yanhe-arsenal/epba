@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Task;
+use App\Epba_card_request;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
