@@ -14,6 +14,7 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         'App\Task' => 'App\Policies\TaskPolicy',
+        'App\Epba_card_request' => 'App\Policies\Epba_card_requestPolicy',
     ];
 
     /**
