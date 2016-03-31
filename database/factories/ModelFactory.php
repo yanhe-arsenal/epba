@@ -27,3 +27,9 @@ $factory->define(App\Task::class, function (Faker\Generator $faker) {
     ];
 });
 
+$factory->define(App\Epba_card_request::class, function (Faker\Generator $faker) {
+    return [
+        'recipient_email' => str_random(25),
+    ];
+});
+
