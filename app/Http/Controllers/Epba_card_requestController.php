@@ -11,6 +11,8 @@ use App\Http\Controllers\Controller;
 use App\Epba_card_request;
 use App\Repositories\Epba_card_requestRepository;
 
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+
 class Epba_card_requestController extends Controller
 {
    /**
