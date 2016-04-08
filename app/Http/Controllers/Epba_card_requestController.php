@@ -77,7 +77,7 @@ class Epba_card_requestController extends Controller
 
 	Mail::send('emails.welcome', $data, function($message) use ($user)
 	{
-  		$message->from('admin@myepba.com', 'Site Admin');
+  		$message->from('myepbaco@myepba.com', 'Site Admin');
   		$message->to($user['email'], $user['name'])->subject('Welcome to My ePBA website!');
 	});
 
