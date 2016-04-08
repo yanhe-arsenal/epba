@@ -1,9 +1,10 @@
 <?php
 return array( 
  'driver' => 'smtp', 
- 'host' => 'gmail-smtp-msa.l.google.com', 
- 'port' => 587, 
+ 'host' => 'smtp.gmail.com', 
+ 'port' => 465, 
  'username' => 'hehe.yan@gmail.com', 
- 'password' => '790926', 
+ 'password' => '790926',
+ 'encryption' => 'ssl', 
 );
 ?>
