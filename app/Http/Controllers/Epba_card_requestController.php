@@ -72,7 +72,7 @@ class Epba_card_requestController extends Controller
 	
 	$data = array(
 		'detail'=>'Your awesome detail here',
-		'name'	=> $user['name'];
+		'name'	=> $user['name']
 	);
 
 	Mail::send('emails.welcome', $data, function($message) use ($user)
