@@ -72,13 +72,13 @@ class Epba_card_requestController extends Controller
 		'name'	=> 'He Yan',
 	);
 
-	$pdf = App::make('dompdf.wrapper');
+	$pdf = \App::make('dompdf.wrapper');
 	$pdf->loadHTML('<h1>Test</h1>');
-	$pdf->download('data.pdf');
 	
 	Mail::send('emails.welcome', $data, function ($message) {
   		$message->from('myepbaco@myepba.com', 'Site Admin');
   		$message->to('yanhe790926@hotmail.com')->subject('Welcome to My ePBA website!');
+		$message->attachData($pdf, "invoice.pdf");
 	});
 
 	return redirect('/epba_card_requests');
