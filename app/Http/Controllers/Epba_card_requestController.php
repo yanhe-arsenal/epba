@@ -13,6 +13,7 @@ use App\Epba_card_request;
 use App\Repositories\Epba_card_requestRepository;
 
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class Epba_card_requestController extends Controller
 {
@@ -70,7 +71,7 @@ class Epba_card_requestController extends Controller
 		'name'	=> 'He Yan',
 	);
 
-	$pdf = \PDF::loadView('emails.welcome', $data);
+	$pdf = PDF::loadView('emails.welcome', $data);
 	
 
 	Mail::send('emails.welcome', $data, function ($message) {
