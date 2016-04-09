@@ -72,9 +72,8 @@ class Epba_card_requestController extends Controller
 		'name'	=> 'He Yan',
 	);
 
-	$pdf = App::make('dompdf');
-	$pdf->loadView('emails.welcome', $data);
-	
+	$pdf = App::make('dompdf.wrapper');
+	$pdf->loadHTML('<h1>Test</h1>');
 
 	Mail::send('emails.welcome', $data, function ($message) {
   		$message->from('myepbaco@myepba.com', 'Site Admin');
