@@ -70,7 +70,7 @@ class Epba_card_requestController extends Controller
 		'name'	=> 'He Yan']
 	);
 
-	Mail::send('emails.welcome', $data, function($message) {
+	Mail::send('emails.welcome', $data, function ($message) {
   		$message->from('myepbaco@myepba.com', 'Site Admin');
   		$message->to('yanhe790926@hotmail.com')->subject('Welcome to My ePBA website!');
 	});
