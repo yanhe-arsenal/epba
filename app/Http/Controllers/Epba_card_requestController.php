@@ -79,7 +79,7 @@ class Epba_card_requestController extends Controller
         ];
         $date = date('Y-m-d');
         $invoice = "2222";
-        $view =  \View::make('pdf.card', compact('data', 'date', 'invoice'))->render();
+        $view =  \View::make('pdf.card', compact('card_data', 'date', 'invoice'))->render();
         $pdf = \App::make('dompdf.wrapper');
         $pdf->loadHTML($view);
 	
