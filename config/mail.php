@@ -68,7 +68,7 @@ return [
     */
 
     
-    'encryption' => env('MAIL_ENCRYPTION', 'ssl/tls'),
+    'encryption' => env('MAIL_ENCRYPTION', 'ssl'),
    	
     /*
     |--------------------------------------------------------------------------
@@ -94,7 +94,7 @@ return [
     |
     */
 
-    'password' => env('97Lqn4en8I'),
+    'password' => env('97Lqn4en8Iaaa'),
 
     /*
     |--------------------------------------------------------------------------
