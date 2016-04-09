@@ -78,7 +78,7 @@ class Epba_card_requestController extends Controller
 	Mail::send('emails.welcome', $data, function ($message) use ($pdf) {
   		$message->from('myepbaco@myepba.com', 'Site Admin');
   		$message->to('yanhe790926@hotmail.com')->subject('Welcome to My ePBA website!');
-		$message->attachData($pdf, "invoice.pdf");
+		$message->attachData($pdf->output(), "invoice.pdf");
 	});
 
 	return redirect('/epba_card_requests');
