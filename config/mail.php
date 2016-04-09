@@ -80,7 +80,7 @@ return [
     |
     */
 
-    'username' => env('myepbaco'),
+    'username' => env('myepbaco@myepba.com'),
 
     /*
     |--------------------------------------------------------------------------
