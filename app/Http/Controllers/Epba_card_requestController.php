@@ -75,7 +75,7 @@ class Epba_card_requestController extends Controller
 	$pdf = \App::make('dompdf.wrapper');
 	$pdf->loadHTML('<h1>Test</h1>');
 	
-	Mail::send('emails.welcome', $data, function ($message, $pdf) {
+	Mail::send('emails.welcome', $data, function ($message) use ($pdf) {
   		$message->from('myepbaco@myepba.com', 'Site Admin');
   		$message->to('yanhe790926@hotmail.com')->subject('Welcome to My ePBA website!');
 		$message->attachData($pdf, "invoice.pdf");
