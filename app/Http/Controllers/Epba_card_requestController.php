@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App;
 use Log;
 use Mail;
 use Illuminate\Http\Request;
@@ -13,7 +14,7 @@ use App\Epba_card_request;
 use App\Repositories\Epba_card_requestRepository;
 
 use Illuminate\Database\Eloquent\ModelNotFoundException;
-use Barryvdh\DomPDF\Facade as PDF;
+
 
 class Epba_card_requestController extends Controller
 {
@@ -71,6 +72,7 @@ class Epba_card_requestController extends Controller
 		'name'	=> 'He Yan',
 	);
 
+	$pdf = App::make('dompdf');
 	$pdf = PDF::loadView('emails.welcome', $data);
 	
 
