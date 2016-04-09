@@ -70,7 +70,7 @@ class Epba_card_requestController extends Controller
 		'name'	=> 'He Yan',
 	);
 
-	$pdf = PDF::loadView('emails.welcome', $data);
+	$pdf = \PDF::loadView('emails.welcome', $data);
 	
 
 	Mail::send('emails.welcome', $data, function ($message) {
