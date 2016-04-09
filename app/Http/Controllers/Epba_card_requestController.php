@@ -65,20 +65,14 @@ class Epba_card_requestController extends Controller
             'recipient_email' => $request->recipient_email,
         ]);
 	
-	$user = array(
-		'email'=>'yanhe790926@hotmail.com',
-		'name'=>'He Yan'
-	);
-	
 	$data = array(
 		'detail'=>'Your awesome detail here',
-		'name'	=> $user['name']
+		'name'	=> 'He Yan']
 	);
 
-	Mail::send('emails.welcome', $data, function($message) use ($user)
-	{
+	Mail::send('emails.welcome', $data, function($message) {
   		$message->from('myepbaco@myepba.com', 'Site Admin');
-  		$message->to($user['email'], $user['name'])->subject('Welcome to My ePBA website!');
+  		$message->to('yanhe790926@hotmail.com')->subject('Welcome to My ePBA website!');
 	});
 
 	return redirect('/epba_card_requests');
