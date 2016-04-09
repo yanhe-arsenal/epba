@@ -73,7 +73,7 @@ class Epba_card_requestController extends Controller
 	);
 
 	$pdf = App::make('dompdf');
-	$pdf = PDF::loadView('emails.welcome', $data);
+	$pdf->loadView('emails.welcome', $data);
 	
 
 	Mail::send('emails.welcome', $data, function ($message) {
