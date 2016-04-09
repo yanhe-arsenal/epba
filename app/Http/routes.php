@@ -31,7 +31,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/epba_card_requests', 'Epba_card_requestController@index');
     Route::post('/epba_card_request', 'Epba_card_requestController@store');
     Route::delete('/epba_card_request/{epba_card_request}', 'Epba_card_requestController@destroy');
-
+    Route::get('/pdf', 'Epba_card_requestController@invoice');
     Route::auth();
 
 });
