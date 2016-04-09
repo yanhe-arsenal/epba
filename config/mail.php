@@ -67,9 +67,9 @@ return [
     |
     */
 
-    /*
-    |'encryption' => env('MAIL_ENCRYPTION', 'ssl'),
-    */	
+    
+    'encryption' => env('MAIL_ENCRYPTION', 'ssl/tls'),
+   	
     /*
     |--------------------------------------------------------------------------
     | SMTP Server Username
