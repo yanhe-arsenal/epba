@@ -83,7 +83,7 @@ class Epba_card_requestController extends Controller
         $pdf = \App::make('dompdf.wrapper');
         $pdf->loadHTML($view);
 	
-	Mail::send('emails.welcome', $email_data, function ($message) use ($pdf) use ($request) {
+	Mail::send('emails.welcome', $email_data, function ($message) use ($pdf, $request) {
   		$message->from('myepbaco@myepba.com', 'Site Admin');
   		$message->to($request->recipient_email)->subject('Welcome to My ePBA website!');
 		$message->attachData($pdf->output(), "ePBA_card.pdf");
