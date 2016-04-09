@@ -68,17 +68,25 @@ class Epba_card_requestController extends Controller
         ]);
 	
 	$data = array(
-		'detail'=>'Your awesome detail here',
-		'name'	=> 'He Yan',
+		'detail'=>'instructions go here...',
 	);
 
-	$pdf = \App::make('dompdf.wrapper');
-	$pdf->loadHTML('<h1>Test</h1>');
+        $card_data =  [
+            'quantity'      => '1' ,
+            'description'   => 'some ramdom text',
+            'price'   => '500',
+            'total'     => '500'
+        ];
+        $date = date('Y-m-d');
+        $invoice = "2222";
+        $view =  \View::make('pdf.card', compact('data', 'date', 'invoice'))->render();
+        $pdf = \App::make('dompdf.wrapper');
+        $pdf->loadHTML($view);
 	
 	Mail::send('emails.welcome', $data, function ($message) use ($pdf) {
   		$message->from('myepbaco@myepba.com', 'Site Admin');
-  		$message->to('yanhe790926@hotmail.com')->subject('Welcome to My ePBA website!');
-		$message->attachData($pdf->output(), "invoice.pdf");
+  		$message->to($request->recipient_email)->subject('Welcome to My ePBA website!');
+		$message->attachData($pdf->output(), "ePBA_card.pdf");
 	});
 
 	return redirect('/epba_card_requests');
@@ -100,27 +108,6 @@ class Epba_card_requestController extends Controller
 	$epba_card_request->delete();
         return redirect('/epba_card_requests');
 
-	}
+    }
 
-	public function invoice() 
-    {
-        $data = $this->getData();
-        $date = date('Y-m-d');
-        $invoice = "2222";
-        $view =  \View::make('pdf.invoice', compact('data', 'date', 'invoice'))->render();
-        $pdf = \App::make('dompdf.wrapper');
-        $pdf->loadHTML($view);
-        return $pdf->stream('invoice');
-    }
- 
-    public function getData() 
-    {
-        $data =  [
-            'quantity'      => '1' ,
-            'description'   => 'some ramdom text',
-            'price'   => '500',
-            'total'     => '500'
-        ];
-        return $data;
-    }
 }
