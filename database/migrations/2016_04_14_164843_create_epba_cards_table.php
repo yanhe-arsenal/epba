@@ -14,6 +14,7 @@ class CreateEpbaCardsTable extends Migration
     {
         Schema::create('epba_cards', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id');
             $table->integer('card_id');
             $table->timestamps();
             $table->string('card_recipient_last_name');
@@ -23,7 +24,7 @@ class CreateEpbaCardsTable extends Migration
             $table->string('card_recipient_birthday');
             $table->string('card_recipient_address');
             $table->integer('card_usage')->default(0);
-            $table->index(['card_id', 'card_recipient_email']);		
+            $table->index(['user_id', 'card_id']);		
         });
     }
 
