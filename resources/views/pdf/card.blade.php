@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>ePBA Card</title>
-    {!! Html::style('assets/css/pdf.css') !!} 	 
+    {!! Html::style('public/assets/css/pdf.css'); !!}	 
 </head>
   <body>
  
