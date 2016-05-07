@@ -46,6 +46,24 @@ class Epba_cardController extends Controller
 	    'card_request_id' => $request->card_request_id,
         ]);
 	
+	$card = Epba_card::where('card_recipient_email', $request->card_recipient_email)->first();
+        $card_id = $card->id;
+	$issue_time = $card->created_at;
+	
+        data =  [
+	    'card_id' => $card_id,
+	    'issue_time' => $issue_time,
+            'first_name'      =>  $request->card_recipient_first_name,
+            'last_name'   => $request->card_recipient_last_name,
+            'email'   => $request->card_recipient_email,
+            'phone'     => $request->card_recipient_phone_number,
+	    'birthday' => $request->card_recipient_birthday,
+	    'address' => $request->card_recipient_address,	
+        ];
+    	$view =  \View::make('pdf.card', compact('data'))->render();
+        $pdf = \App::make('dompdf.wrapper');
+        $pdf->loadHTML($view);
+        return $pdf->stream('epba_card');
     }
 
 }
