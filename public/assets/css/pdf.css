@@ -1,6 +1,5 @@
 @font-face {
-  font-family: SourceSansPro;
-  src: url(SourceSansPro-Regular.ttf);
+   font-family: "Times New Roman", Georgia, Serif;	
 }
 
 .clearfix:after {
