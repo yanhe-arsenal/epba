@@ -36,7 +36,7 @@ Route::group(['middleware' => ['web']], function () {
 
 });
 
-Route::group(['middleware' => ['web']], function () {
+Route::group(['middleware' => ['guest']], function () {
     Route::post('/epba_card', 'Epba_cardController@store');
     Route::get('/pdf', 'Epba_card_requestController@invoice');
 	
