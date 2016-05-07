@@ -3,13 +3,15 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>ePBA Card</title>
-  </head>
+	{{ Html::style('assets/css/pdf.css') }}
+ </head>
   <body>
  
     <main>
       <div id="details" class="clearfix">
         <div id="invoice">
-          <h1>ePBA Card {{ $data['card_id'] }}</h1>
+          <h1>ePBA Card</h1>
+          <div class="ID">Card ID: {{ $data['card_id'] }}</div>
           <div class="date">Issue Time: {{ $data['issue_time'] }}</div>
         </div>
       </div>
