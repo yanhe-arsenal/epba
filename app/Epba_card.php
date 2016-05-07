@@ -2,6 +2,7 @@
 
 namespace App;
 
+Use App\Epba_card_request;
 use Illuminate\Database\Eloquent\Model;
 
 class Epba_card extends Model
@@ -11,7 +12,12 @@ class Epba_card extends Model
      *
      * @var array
      */
-    protected $fillable = ['recipient_email'];
+    protected $fillable = ['card_recipient_last_name'];
+    protected $fillable = ['card_recipient_first_name'];
+    protected $fillable = ['card_recipient_email'];
+    protected $fillable = ['card_recipient_phone_number'];
+    protected $fillable = ['card_recipient_birthday'];
+    protected $fillable = ['card_recipient_address'];
 
      /**
      * The attributes that should be cast to native types.
@@ -19,14 +25,14 @@ class Epba_card extends Model
      * @var array
      */
     protected $casts = [
-        'user_id' => 'int',
+        'card_request_id' => 'int',
     ];
 
     /**
-     * Get the user that owns the epba card request.
+     * Get the corresponding car request
      */
-    public function user()
+    public function epba_card_request()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Epba_card_request::class);
     }
 }
