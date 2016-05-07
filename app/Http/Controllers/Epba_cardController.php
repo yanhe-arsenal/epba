@@ -43,6 +43,7 @@ class Epba_cardController extends Controller
             'card_recipient_birthday' => $request->card_recipient_birthday,
             'card_recipient_phone_number' => $request->card_recipient_phone_number,
             'card_recipient_address' => $request->card_recipient_address,
+	    'card_request_id' => $request->card_request_id,
         ]);
 	
     }

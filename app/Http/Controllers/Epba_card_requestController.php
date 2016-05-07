@@ -67,27 +67,32 @@ class Epba_card_requestController extends Controller
             'recipient_email' => $request->recipient_email,
         ]);
 	
+	$card_request = Epba_card_request::where('recipient_email', $request->recipient_email)->first();
+	$card_request_id = $card_request->id;
+
 	$email_data = array(
-		'detail'=>'instructions go here...',
+		'detail'=>'Please follow the URL (http://myepba.com/epba_card_generation/$card_request_id) to generate and print the PDF of your ePBA card. ',
 	);
 
-        $data =  [
-            'quantity'      => '1' ,
-            'description'   => 'some ramdom text',
-            'price'   => '500',
-            'total'     => '500'
-        ];
-        $date = date('Y-m-d');
-        $invoice = "2222";
-        $view =  \View::make('pdf.card', compact('data', 'date', 'invoice'))->render();
-        $pdf = \App::make('dompdf.wrapper');
-        $pdf->loadHTML($view);
-	
-	Mail::send('emails.welcome', $email_data, function ($message) use ($pdf, $request) {
-  		$message->from('myepbaco@myepba.com', 'Site Admin');
-  		$message->to($request->recipient_email)->subject('Welcome to My ePBA website!');
-		$message->attachData($pdf->output(), "ePBA_card.pdf");
-	});
+	/*
+        *$data =  [
+        *    'quantity'      => '1' ,
+        *    'description'   => 'some ramdom text',
+        *    'price'   => '500',
+        *    'total'     => '500'
+        *];
+        *$date = date('Y-m-d');
+        *$invoice = "2222";
+        *$view =  \View::make('pdf.card', compact('data', 'date', 'invoice'))->render();
+        *$pdf = \App::make('dompdf.wrapper');
+        *$pdf->loadHTML($view);
+	*
+	*Mail::send('emails.welcome', $email_data, function ($message) use ($pdf, $request) {
+  	*	$message->from('myepbaco@myepba.com', 'Site Admin');
+  	*	$message->to($request->recipient_email)->subject('Welcome to My ePBA website!');
+	*	$message->attachData($pdf->output(), "ePBA_card.pdf");
+	*});
+	*/
 
 	return redirect('/epba_card_requests');
     }
