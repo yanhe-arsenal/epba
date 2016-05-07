@@ -34,6 +34,7 @@ class Epba_cardController extends Controller
             'card_recipient_email' => 'required|unique:epba_cards|email',
             'card_recipient_phone_number' => 'required',
             'card_recipient_address' => 'required',
+            'card_request_id' => 'required|unique:epba_cards',
         ]);
 
         Epba_card::create([
