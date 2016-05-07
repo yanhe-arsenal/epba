@@ -71,7 +71,7 @@ class Epba_card_requestController extends Controller
 	$card_request_id = $card_request->id;
 
 	$email_data = array(
-		'detail'=>'Please follow the URL (http://myepba.com/epba_card_generation/$card_request_id) to generate and print the PDF of your ePBA card. ',
+		'detail'=>'Please follow the URL (http://myepba.com/epba_card_generation/$card_request_id) to print the PDF of your ePBA card. ',
 	);
 
 	/*
@@ -93,7 +93,10 @@ class Epba_card_requestController extends Controller
 	*	$message->attachData($pdf->output(), "ePBA_card.pdf");
 	*});
 	*/
-
+	Mail::send('emails.welcome', $email_data, function ($message) use ($request) {
+		$message->from('myepbaco@myepba.com', 'Site Admin');
+		$message->to($request->recipient_email)->subject('Welcome to My ePBA website!');
+	});
 	return redirect('/epba_card_requests');
     }
 
