@@ -19,6 +19,9 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 class Epba_cardController extends Controller
 {
 
+	public function __construct()
+	{		
+	}
     /**
      * Create a new epba card.
      *
