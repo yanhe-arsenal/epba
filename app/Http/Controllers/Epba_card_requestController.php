@@ -71,7 +71,7 @@ class Epba_card_requestController extends Controller
 	$card_request_id = $card_request->id;
 
 	$email_data = array(
-		'detail'=>'Please follow the URL (http://myepba.com/epba_card_generation/$card_request_id) to print the PDF of your ePBA card. ',
+		'detail'=>"Please follow the URL (http://myepba.com/epba_card_generation/$card_request_id) to print the PDF of your ePBA card.",
 	);
 
 	/*
