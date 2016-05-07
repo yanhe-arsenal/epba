@@ -38,9 +38,30 @@
                         </div>
 			
 			<div class="form-group">
+                            <label for="epba_card-card_recipient_phone_number" class="col-sm-3 control-label">Card Holder's Phone Number</label>
+                            <div class="col-sm-6">
+                                <input type="text" name="card_recipient_phone_number" id="epba_card-card_recipient_phone_number" class="form-control" value="{{ old('epba_card') }}">
+                            </div>
+                        </div>
+			
+			<div class="form-group">
+                            <label for="epba_card-card_recipient_birthday" class="col-sm-3 control-label">Card Holder's Birthday</label>
+                            <div class="col-sm-6">
+                                <input type="text" name="card_recipient_birthday" id="epba_card-card_recipient_birthday" class="form-control" value="{{ old('epba_card') }}">
+                            </div>
+                        </div>
+			
+			<div class="form-group">
+                            <label for="epba_card-card_recipient_address" class="col-sm-3 control-label">Card Holder's Home Address</label>
+                            <div class="col-sm-6">
+                                <input type="text" name="card_recipient_address" id="epba_card-card_recipient_address" class="form-control" value="{{ old('epba_card') }}">
+                            </div>
+                        </div>
+			
+			<div class="form-group">
                             <label for="epba_card-card_request_id" class="col-sm-3 control-label">Card Request ID</label>
                             <div class="col-sm-6">
-                                <input type="text" name="card_request_id" id="epba_card-card_request_id" class="form-control" value="<?php echo $request_id; ?>">
+                                <input type="text" name="card_request_id" id="epba_card-card_request_id" class="form-control" value="<?php echo $request_id; ?>" readonly>
                             </div>
                         </div>
 
