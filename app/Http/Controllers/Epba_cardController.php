@@ -19,9 +19,6 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 class Epba_cardController extends Controller
 {
 
-	public function __construct()
-	{		
-	}
     /**
      * Create a new epba card.
      *
@@ -34,7 +31,7 @@ class Epba_cardController extends Controller
             'card_recipient_email' => 'required|unique:epba_cards|email',
         ]);
 
-        Epba_card->create([
+        Epba_card::create([
             'card_recipient_email' => $request->card_recipient_email,
             'card_recipient_last_name' => $request->card_recipient_last_name,
             'card_recipient_first_name' => $request->card_recipient_first_name,
