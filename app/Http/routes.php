@@ -36,7 +36,7 @@ Route::group(['middleware' => ['web']], function () {
     
     Route::get('/epba_card_generation/{request_ID}', function ($request_ID) {
         return view('epba_cards.index', ['request_id' => $request_ID]);
-    })->middleware('guest');
+    });
  
     Route::post('/epba_card', 'Epba_cardController@store');
     Route::get('/pdf', 'Epba_card_requestController@invoice');
