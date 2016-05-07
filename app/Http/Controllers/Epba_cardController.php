@@ -50,7 +50,7 @@ class Epba_cardController extends Controller
         $card_id = $card->id;
 	$issue_time = $card->created_at;
 	
-        data =  [
+        $data =  [
 	    'card_id' => $card_id,
 	    'issue_time' => $issue_time,
             'first_name'      =>  $request->card_recipient_first_name,
