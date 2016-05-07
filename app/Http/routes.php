@@ -28,11 +28,12 @@ Route::group(['middleware' => ['web']], function () {
         return view('welcome');
     })->middleware('guest');
 
+    Route::post('/epba_card', 'Epba_cardController@store')->middleware('guest');;
+    Route::get('/pdf', 'Epba_card_requestController@invoice')->middleware('guest');;
+
     Route::get('/epba_card_requests', 'Epba_card_requestController@index');
     Route::post('/epba_card_request', 'Epba_card_requestController@store');
     Route::delete('/epba_card_request/{epba_card_request}', 'Epba_card_requestController@destroy');
-    Route::post('/epba_card', 'Epba_cardController@store');
-    Route::get('/pdf', 'Epba_card_requestController@invoice');
     Route::auth();
 
 });
