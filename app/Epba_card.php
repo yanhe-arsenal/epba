@@ -12,12 +12,7 @@ class Epba_card extends Model
      *
      * @var array
      */
-    protected $fillable = ['card_recipient_last_name'];
-    protected $fillable = ['card_recipient_first_name'];
-    protected $fillable = ['card_recipient_email'];
-    protected $fillable = ['card_recipient_phone_number'];
-    protected $fillable = ['card_recipient_birthday'];
-    protected $fillable = ['card_recipient_address'];
+    protected $fillable = ['card_recipient_last_name', 'card_recipient_first_name', 'card_recipient_email', 'card_recipient_phone_number', 'card_recipient_birthday', 'card_recipient_address'];
 
      /**
      * The attributes that should be cast to native types.
