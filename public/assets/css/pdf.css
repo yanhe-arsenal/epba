@@ -85,7 +85,7 @@ h2.name {
 }
 
 table {
-  width: 100%;
+  width: 50%;
   border-collapse: collapse;
   border-spacing: 0;
   margin-bottom: 20px;
@@ -93,7 +93,7 @@ table {
 
 table th,
 table td {
-  padding: 20px;
+  padding: 5px;
   background: #EEEEEE;
   text-align: center;
   border-bottom: 1px solid #FFFFFF;
